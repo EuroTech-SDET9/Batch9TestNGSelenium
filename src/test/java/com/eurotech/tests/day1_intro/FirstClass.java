@@ -15,6 +15,8 @@ public class FirstClass {
 
         System.out.println("faker.name().firstName() = " + faker.name().firstName());
 
+        System.out.println("faker.address().cityName() = " + faker.address().cityName());
+
     }
 
 }
