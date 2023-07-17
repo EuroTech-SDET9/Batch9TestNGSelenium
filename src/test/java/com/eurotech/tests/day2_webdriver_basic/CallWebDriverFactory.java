@@ -13,7 +13,7 @@ public class CallWebDriverFactory {
         verify that title is DevEx
          */
 
-        WebDriver driver = WebDriverFactory.getDriver("firefox");
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.get("http://eurotech.study/login");
 
         String expectedTitle = "DevEx";
