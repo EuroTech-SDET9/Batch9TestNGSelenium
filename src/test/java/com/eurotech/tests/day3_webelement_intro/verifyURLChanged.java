@@ -18,6 +18,7 @@ public class verifyURLChanged {
         --enter password "Test12345!"
         --Click login button
         --verify that url has changed
+        --expectedUrl = "http://eurotech.study/dashboard"
          */
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
@@ -29,17 +30,33 @@ public class verifyURLChanged {
         String email ="eurotech@gmail.com";
         String password ="Test12345!";
 
+        //enter username
         WebElement emailInput = driver.findElement(By.id("loginpage-input-email"));
         emailInput.sendKeys(email);
 
         //second way
        // emailInput.sendKeys("eurotech@gmail.com");
 
+        //enter password
         WebElement passwordInput = driver.findElement(By.id("loginpage-form-pw-input"));
         passwordInput.sendKeys(password);
 
         WebElement loginBtn = driver.findElement(By.id("loginpage-form-btn"));
         loginBtn.click();
+
+
+
+
+        //verify that URL has changed
+        Thread.sleep(1000);
+        String expectedUrl = "http://eurotech.study/dashboard";
+        String actualUrl =driver.getCurrentUrl();
+
+        if(expectedUrl.equals(actualUrl)){
+            System.out.println("Passed");
+        }else {
+            System.out.println("Failed");
+        }
 
         Thread.sleep(2000);
 
