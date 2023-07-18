@@ -20,6 +20,8 @@ public class NameLocatorTest {
 
         driver.findElement(By.name("password")).sendKeys(faker.internet().password());
 
+        driver.findElement(By.id("loginpage-form-btn")).click();
+
         Thread.sleep(2000);
         driver.close();
     }
