@@ -3,13 +3,17 @@ package com.eurotech.tests.day2_webdriver_basic;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class CloseAndQuit {
 
     public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+//        20.07.2023 --> Mac users had issue with chrome binary, so had to set its location explicitly
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
+        WebDriver driver = new ChromeDriver(chromeOptions);
 
 
         driver.get("http://wwww.amazon.com");
