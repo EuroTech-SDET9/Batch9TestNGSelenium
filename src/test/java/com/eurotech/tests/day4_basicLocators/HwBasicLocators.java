@@ -11,6 +11,15 @@ public class HwBasicLocators {
         --verify that result area has selenium text
          */
 
+         /*
+          Test Case 2
+          go to ebay.com
+          search selenium
+          click on search button
+          print number of results
+           */
+
+        //USE XPATH LOCATOR ONLY
 
     }
 }
