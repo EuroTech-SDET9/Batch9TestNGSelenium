@@ -25,7 +25,7 @@ public class TestNGAssertionDemo {
 
     }
 
-    @Ignore
+
     @Test
     public void test2() {
         Assert.assertEquals("test","tesT","Tests ARE NOT EQUALS");
@@ -38,6 +38,8 @@ public class TestNGAssertionDemo {
 
      //   Assert.assertTrue(actualTitle.contains(expectedTitle));
         Assert.assertTrue(actualTitle.startsWith(expectedTitle));
+
+        Assert.assertNotEquals("Title","Title","They are NOT EQUALS");
 
     }
 
