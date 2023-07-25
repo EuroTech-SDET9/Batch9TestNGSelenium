@@ -19,6 +19,7 @@ public class DisplayedDemo {
         WebElement helloWorld = driver.findElement(By.xpath("//h4[text()='Hello World!']"));
         Assert.assertFalse(helloWorld.isDisplayed(),"Hello world is displayed");
 
+
         //click start button
         WebElement startBtn = driver.findElement(By.xpath("//div[@id='start']/button"));
         startBtn.click();
@@ -26,7 +27,7 @@ public class DisplayedDemo {
 
         //verify that Hello World! is visible (displayed)
         Assert.assertTrue(helloWorld.isDisplayed(),"Hello World is NOT DISPLAYED");
-
+        System.out.println("helloWorld.getText() = " + helloWorld.getText());
 
 
         Thread.sleep(2000);
