@@ -49,6 +49,28 @@ public class ExplicitWait {
 
     }
 
+    @Test
+    public void explicitWaitExample2() {
+
+
+        driver.get("https://the-internet.herokuapp.com/dynamic_controls");
+
+        WebElement enableBtn = driver.findElement(By.cssSelector("#input-example>button"));
+
+        enableBtn.click();
+
+        WebElement inputArea = driver.findElement(By.cssSelector("#input-example>input"));
+
+        WebDriverWait wait = new WebDriverWait(driver,15);
+
+        wait.until(ExpectedConditions.elementToBeClickable(inputArea));
+
+        inputArea.sendKeys("Eurotech Was Here");
+
+
+
+    }
+
     @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(2000);
