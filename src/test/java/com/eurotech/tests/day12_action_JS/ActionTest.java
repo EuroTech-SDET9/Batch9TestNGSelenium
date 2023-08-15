@@ -46,6 +46,42 @@ public class ActionTest {
 
     }
 
+    @Test
+    public void dragAndDrop() {
+
+        driver.get("https://demoqa.com/droppable");
+        WebElement source = driver.findElement(By.cssSelector("#draggable"));
+        WebElement target = driver.findElement(By.cssSelector("#droppable"));
+
+
+        Actions actions = new Actions(driver);
+        actions.dragAndDrop(source,target).perform();
+
+        WebElement verifyMessage = driver.findElement(By.xpath("//p[text()='Dropped!']"));
+
+        Assert.assertEquals(verifyMessage.getText(),"Dropped!");
+
+    }
+
+    @Test
+    public void dragAndDrop2() {
+        driver.get("https://demoqa.com/droppable");
+        WebElement source = driver.findElement(By.cssSelector("#draggable"));
+        WebElement target = driver.findElement(By.cssSelector("#droppable"));
+
+        Actions actions = new Actions(driver);
+
+        WebElement acceptBtn = driver.findElement(By.id("droppableExample-tab-accept"));
+        actions.contextClick(acceptBtn); //right click
+        actions.moveToElement(source).clickAndHold().moveToElement(target).pause(5000).release().perform();
+
+        WebElement verifyMessage = driver.findElement(By.xpath("//p[text()='Dropped!']"));
+
+        Assert.assertEquals(verifyMessage.getText(),"Dropped!");
+
+
+    }
+
     @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(2000);
