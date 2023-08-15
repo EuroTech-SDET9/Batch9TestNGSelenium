@@ -31,17 +31,53 @@ public class JavaScriptExecutorDemo {
 
         WebElement china = driver.findElement(By.linkText("China"));
 
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", china);  //force click
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("arguments[0].click();", china);  //force click
 
+    }
 
+    @Test
+    public void typeWithJS() {
+
+        driver.get("https://the-internet.herokuapp.com/dynamic_controls");
+
+        WebElement inputBox = driver.findElement(By.cssSelector("#input-example>input"));
+
+        String text = "Hello Disabled Input";
+
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+
+        jse.executeScript("arguments[0].setAttribute('value', '" + text +"')", inputBox);
 
 
     }
 
+    @Test
+    public void scrollUpAndScrollDown() throws InterruptedException {
+
+        driver.get("https://www.amazon.co.uk/");
+        driver.findElement(By.id("sp-cc-accept")).click();
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+
+        Thread.sleep(2000);
+      //  jse.executeScript("window.scrollBy(0,500)");
+
+        //scroll Down
+        for (int i = 0; i <10 ; i++) {
+            Thread.sleep(1000);
+            jse.executeScript("window.scrollBy(0,250)");
+        }
+
+        //scroll Up
+        for (int i = 0; i <10 ; i++) {
+            Thread.sleep(1000);
+            jse.executeScript("window.scrollBy(0,-250)");
+        }
+    }
+
     @AfterMethod
     public void tearDown() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         driver.quit();
     }
 
