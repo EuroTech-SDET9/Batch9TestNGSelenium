@@ -75,6 +75,22 @@ public class JavaScriptExecutorDemo {
         }
     }
 
+    @Test
+    public void scrollToElement() throws InterruptedException {
+        driver.get("https://www.amazon.co.uk/");
+        driver.findElement(By.id("sp-cc-accept")).click();
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+
+        WebElement spain = driver.findElement(By.linkText("Spain"));
+        jse.executeScript("arguments[0].scrollIntoView(true);",spain);
+        jse.executeScript("arguments[0].click();", spain);
+
+
+
+        Thread.sleep(2000);
+
+    }
+
     @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(3000);
