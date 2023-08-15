@@ -65,6 +65,7 @@ public class ExplicitWait {
 
         wait.until(ExpectedConditions.elementToBeClickable(inputArea));
 
+
         inputArea.sendKeys("Eurotech Was Here");
 
 
