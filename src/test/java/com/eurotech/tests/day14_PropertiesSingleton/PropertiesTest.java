@@ -24,7 +24,10 @@ public class PropertiesTest {
         driver.findElement(By.name("email")).sendKeys(ConfigurationReader.get("usernameTeacher"));
 
 //        driver.findElement(By.name("password")).sendKeys("Test12345!");
-        driver.findElement(By.name("password")).sendKeys(ConfigurationReader.get("passwordTeacher") + Keys.ENTER);
+        driver.findElement(By.name("password")).sendKeys(ConfigurationReader.get("passwordteacher") + Keys.ENTER);
+
+        System.out.println("ConfigurationReader.get(\"passwordteacher\") = " + ConfigurationReader.get("passwordTeacher"));
+
 
 //        driver.findElement(By.id("loginpage-form-btn")).click();
         Thread.sleep(1000);
