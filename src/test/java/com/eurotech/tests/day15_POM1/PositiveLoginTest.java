@@ -43,7 +43,6 @@ public class PositiveLoginTest extends TestBase {
     @Test
     public void loginWithMethod() {
         driver.get(ConfigurationReader.get("url"));
-        loginPage.understandBtn.click();
         String username =ConfigurationReader.get("usernameStudent");
         String password = ConfigurationReader.get("passwordStudent");
         loginPage.login(username,password);

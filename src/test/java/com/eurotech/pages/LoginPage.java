@@ -35,6 +35,7 @@ public class LoginPage {
 
 
     public void login(String username,String password){
+        understandBtn.click();
         usernameInput.sendKeys(username);
         passwordInput.sendKeys(password);
         loginBtn.click();
