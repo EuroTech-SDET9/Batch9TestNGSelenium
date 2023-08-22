@@ -1,6 +1,7 @@
 package com.eurotech.tests.day14_PropertiesSingleton;
 
 import com.eurotech.utilities.ConfigurationReader;
+import com.eurotech.utilities.Driver;
 import com.eurotech.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -13,7 +14,7 @@ public class PropertiesTest {
     @Test
     public void test() throws InterruptedException {
         //        WebDriver driver = WebDriverFactory.getDriver("chrome");
-        WebDriver driver = WebDriverFactory.getDriver(ConfigurationReader.get("browser"));
+        WebDriver driver = Driver.get();
 
 //        driver.get("http://eurotech.study/login");
         driver.get(ConfigurationReader.get("url"));

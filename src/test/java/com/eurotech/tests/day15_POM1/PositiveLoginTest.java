@@ -1,14 +1,22 @@
 package com.eurotech.tests.day15_POM1;
 
+import com.eurotech.pages.BasePage;
 import com.eurotech.pages.LoginPage;
 import com.eurotech.tests.TestBase;
+import com.eurotech.utilities.BrowserUtils;
 import com.eurotech.utilities.ConfigurationReader;
+import com.eurotech.utilities.Driver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class PositiveLoginTest extends TestBase {
 
     LoginPage loginPage = new LoginPage();
+
 
     @Test
     public void positiveLogin() throws InterruptedException {
@@ -17,7 +25,7 @@ public class PositiveLoginTest extends TestBase {
         driver.get(ConfigurationReader.get("url"));
 
         loginPage.understandBtn.click();
-        loginPage.usernameInput.sendKeys(ConfigurationReader.get("usernameTeacher"));
+        loginPage.usernameInputFindAll.sendKeys(ConfigurationReader.get("usernameTeacher"));
         loginPage.passwordInput.sendKeys(ConfigurationReader.get("passwordTeacher"));
         loginPage.loginBtn.click();
 
@@ -32,10 +40,12 @@ public class PositiveLoginTest extends TestBase {
     public void loginWithStudent() {
 
         driver.get(ConfigurationReader.get("url"));
+        BrowserUtils.waitForVisibility(loginPage.understandBtn,10);
         loginPage.understandBtn.click();
         loginPage.usernameInput.sendKeys(ConfigurationReader.get("usernameStudent"));
         loginPage.passwordInput.sendKeys(ConfigurationReader.get("passwordStudent"));
-        loginPage.loginBtn.click();
+        //loginPage.loginBtn.click();
+        BrowserUtils.clickWithJS(loginPage.loginBtn);
 
 
     }

@@ -3,15 +3,17 @@ package com.eurotech.pages;
 import com.eurotech.utilities.ConfigurationReader;
 import com.eurotech.utilities.Driver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+import java.util.List;
+
+public class LoginPage extends BasePage {
 
 
-    public LoginPage(){
-        PageFactory.initElements(Driver.get(),this);
-    }
+
 
 
     @FindBy(id = "loginpage-input-email")
@@ -31,6 +33,25 @@ public class LoginPage {
 
     @FindBy(xpath = "//*[text()='Invalid Credentials!']")
     public WebElement warningMessage;
+
+
+
+
+
+    //@FindAll
+    //To use multiple locator if at least one of them is matching it will find the web element.
+    @FindAll({
+            @FindBy(id = "loginpage-input-email"), //or
+            @FindBy(name = "emailhghjghjghghghjgjh")})
+    public WebElement usernameInputFindAll;
+
+    //@FindBys
+    //if the locators are matching with the element then it will return it.
+    @FindBys({
+            @FindBy(id = "loginpage-form-pw-input"),   // and
+            @FindBy(name = "password")
+    })
+    public WebElement passwordInputFindBys;
 
 
 
