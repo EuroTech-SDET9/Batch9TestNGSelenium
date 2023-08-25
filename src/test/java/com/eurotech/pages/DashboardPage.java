@@ -27,6 +27,9 @@ public class DashboardPage extends BasePage {
     @FindBy(xpath = "//span[text()='My Account']")
     public WebElement myAccount;
 
+    @FindBy(xpath = "//a[@class='btn btn-light']")
+    public List<WebElement> dashboardList;
+
 
     public void navigateMenu(String menuName){
 
