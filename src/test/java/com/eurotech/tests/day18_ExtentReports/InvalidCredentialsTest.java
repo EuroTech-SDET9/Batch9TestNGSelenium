@@ -30,7 +30,7 @@ public class InvalidCredentialsTest extends TestBase {
         extentLogger.info("Click Login button");
         loginPage.loginBtn.click();
 
-        String expectedMessage = "Invalid Credentials";
+        String expectedMessage = "Invalid Credentials!";
         String actualMessage = loginPage.warningMessage.getText();
 
         extentLogger.info("Verifying that user cannot login");
@@ -69,7 +69,7 @@ public class InvalidCredentialsTest extends TestBase {
         extentLogger.info("Click Login button");
         loginPage.loginBtn.click();
 
-        String expectedMessage = "Invalid Credentials";
+        String expectedMessage = "Invalid Credentials!";
         String actualMessage = loginPage.warningMessage.getText();
 
         extentLogger.info("Verifying that user cannot login");

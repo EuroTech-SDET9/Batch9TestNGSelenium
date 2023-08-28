@@ -31,6 +31,11 @@ public class DashboardPage extends BasePage {
     public List<WebElement> dashboardList;
 
 
+                                 ////tbody/tr[2]/td[2]
+    @FindBy(xpath = "//*[text()='Apple']/../td[2]")
+    public WebElement jobTitle;
+
+
     public void navigateMenu(String menuName){
 
         Driver.get().findElement(By.xpath("//*[text()='"+menuName+"']")).click();
