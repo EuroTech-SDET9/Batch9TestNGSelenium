@@ -18,7 +18,7 @@ public class WebTables {
 
     @BeforeMethod
     public void setUp() {
-        driver = WebDriverFactory.getDriver("chrome");
+        driver = WebDriverFactory.getDriver("firefox");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.techlistic.com/p/demo-selenium-practice.html");
         driver.findElement(By.xpath("//button[@id='ez-accept-all']")).click();

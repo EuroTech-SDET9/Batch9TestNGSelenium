@@ -15,7 +15,7 @@ public class ImplicitWait {
 
     @BeforeMethod
     public void setUp() {
-        driver = WebDriverFactory.getDriver("chrome");
+        driver = WebDriverFactory.getDriver("firefox");
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
