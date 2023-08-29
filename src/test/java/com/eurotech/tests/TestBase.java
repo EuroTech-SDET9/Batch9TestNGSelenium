@@ -12,6 +12,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -57,7 +58,7 @@ public class TestBase {
         driver = Driver.get();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        wait =new WebDriverWait(driver,10);
+        wait =new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
     @AfterMethod

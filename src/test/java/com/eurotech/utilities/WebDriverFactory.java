@@ -1,6 +1,6 @@
 package com.eurotech.utilities;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -23,7 +23,7 @@ public class WebDriverFactory {
 
         switch (browserType.toLowerCase()){
             case "chrome":
-                WebDriverManager.chromedriver().setup();
+           //     WebDriverManager.chromedriver().setup();
 //                initial version:
 //                driver = new ChromeDriver();
 //                break;
@@ -34,7 +34,7 @@ public class WebDriverFactory {
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case "firefox":
-                WebDriverManager.firefoxdriver().setup();
+             //   WebDriverManager.firefoxdriver().setup();
                 driver=new FirefoxDriver();
                 break;
         }

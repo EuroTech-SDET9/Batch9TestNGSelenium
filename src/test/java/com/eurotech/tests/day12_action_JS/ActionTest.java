@@ -18,7 +18,7 @@ public class ActionTest {
 
     @BeforeMethod
     public void setUp() {
-        driver = WebDriverFactory.getDriver("firefox");
+        driver = WebDriverFactory.getDriver("chrome");
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }

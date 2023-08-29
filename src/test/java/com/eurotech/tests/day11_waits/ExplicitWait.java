@@ -11,6 +11,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class ExplicitWait {
@@ -39,7 +40,7 @@ public class ExplicitWait {
 
         WebElement helloWorldText = driver.findElement(By.cssSelector("#finish>h4"));
         //create explicit wait object
-        WebDriverWait wait = new WebDriverWait(driver,10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(helloWorldText));
 
         Assert.assertEquals(helloWorldText.getText(),"Hello World!");
@@ -61,7 +62,7 @@ public class ExplicitWait {
 
         WebElement inputArea = driver.findElement(By.cssSelector("#input-example>input"));
 
-        WebDriverWait wait = new WebDriverWait(driver,15);
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 
         wait.until(ExpectedConditions.elementToBeClickable(inputArea));
 
