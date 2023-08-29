@@ -27,7 +27,7 @@ public class DDFLoginTest extends TestBase {
         LoginPage loginPage = new LoginPage();
         DashboardPage dashboardPage = new DashboardPage();
 
-        extentLogger = report.createTest(username+" 's login test");
+        extentLogger = report.createTest(name+" 's login test");
         driver.get(ConfigurationReader.get("url"));
 
         extentLogger.info("User enter username and password");
